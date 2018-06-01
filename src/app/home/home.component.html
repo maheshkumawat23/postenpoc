@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Posten POC</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <p>Following Angular concepts used to make this POC.</p>
+        <div>
+          <ul>
+            <li *ngFor="let item of angularConcepts">
+              {{item}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <p>Following Features of the POC.</p>
+        <div>
+          <ul>
+            <li *ngFor="let item of featuresList">
+              {{item}}
+            </li>
+          </ul>
+        </div>
+        <p> Technologies List </p>
+        <div>
+          <ul>
+            <li *ngFor="let item of technologiesList">
+              {{item}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
