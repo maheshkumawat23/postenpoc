@@ -9,10 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { ParcelsComponent } from './parcels/parcels.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SideFilterComponent } from './side-filter/side-filter.component';
+import { ParcelContainerComponent } from './parcel-container/parcel-container.component';
 
 import { FilterPipe} from './pipes/filter.pipe';
 import { DateFilterPipe } from './pipes/datefilter.pipe';
 import { ParcelDataService } from './services/parcel-data.service';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { ParcelDataService } from './services/parcel-data.service';
     ParcelsComponent,
     PageNotFoundComponent,
     FilterPipe,
-    DateFilterPipe
+    DateFilterPipe,
+    SideFilterComponent,
+    ParcelContainerComponent
   ],
   imports: [
     BrowserModule,

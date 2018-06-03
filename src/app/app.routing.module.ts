@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { ParcelsComponent } from './parcels/parcels.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ParcelContainerComponent } from './parcel-container/parcel-container.component';
 
 //Defining Your Routes here
 const appRoutes : Routes = [
      { path:'home', component: HomeComponent},
-     { path:'parcels', component: ParcelsComponent },
+     { path:'parcels', component: ParcelContainerComponent },
      { path:'', redirectTo:'/home', pathMatch: 'full'},
      { path:'**', component: PageNotFoundComponent}
     ]

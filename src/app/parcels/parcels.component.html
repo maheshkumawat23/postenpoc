@@ -1,61 +1,34 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-3 col-xs-9 px-1 bg-light" id="sticky-sidebar">
-      <div class="py-2 sticky-top">
-        <div class="nav flex-column">
-          <h4> Filter By Name </h4>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" [(ngModel)]="searchText">
-          </div>
-          <h4> Filter By Date </h4>
-          <div class="form-group">
-            <label for="name">From:</label>
-            <input type="date" class="form-control" [(ngModel)]="query.from">
-          </div>
-          <div class="form-group">
-            <label for="name">to:</label>
-            <input type="date" class="form-control" min="{{query.from}}" [(ngModel)]="query.to">
-          </div>
-          <button type="button" [disabled]="!query.from||!query.to" class="btn btn-success">Find</button>
-        </div>
+<h1>Parcels</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>view</th>
+      <th>Order Number</th>
+      <th>Name </th>
+      <th>Order Date</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let parcel of parcelData | filter: searchText | datefilter: query.from : query.to ;let i=index ">
+    <tr *ngIf="parcel !==-1">
+      <td>
+        <i class="fa" [ngClass]="toggle[i] ? 'fa-minus': 'fa-plus'" aria-hidden="true" (click)="toggleRow(parcel);toggle[i] = !toggle[i]"></i>
+      </td>
+      <td>{{parcel.id}}</td>
+      <td>{{parcel.name}}</td>
+      <td>{{parcel.date}}</td>
+      <td>{{parcel.total}}</td>
+    </tr>
+    <ng-container *ngIf="parcel === -1">
+      <div class="alert alert-danger">
+        <strong>Not Found!</strong> Try again !!.
       </div>
-    </div>
-    <div class="col" id="main">
-      <h1>Parcels</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>view</th>
-            <th>Order Number</th>
-            <th>Name </th>
-            <th>Order Date</th>
-            <th>Total Price</th>
-          </tr>
-        </thead>
-        <tbody *ngFor="let parcel of parcelData | filter: searchText | datefilter: query.from : query.to ;let i=index ">
-          <tr *ngIf="parcel !==-1">
-            <td>
-              <i class="fa" [ngClass]="toggle[i] ? 'fa-minus': 'fa-plus'" aria-hidden="true" (click)="toggleRow(i);toggle[i] = !toggle[i]"></i>
-            </td>
-            <td>{{parcel.id}}</td>
-            <td>{{parcel.name}}</td>
-            <td>{{parcel.date}}</td>
-            <td>{{parcel.total}}</td>
-          </tr>
-          <ng-container *ngIf="parcel === -1">
-            <div class="alert alert-danger">
-              <strong>Not Found!</strong> Try again !!.
-            </div>
-          </ng-container>
-          <tr *ngFor="let subItem of parcel.desc;let j=index" [ngStyle]="parcel.style">
-            <td>{{subItem.id}}</td>
-            <td>Item-{{j+1}}</td>
-            <td>{{subItem.itemName}}</td>
-            <td>{{subItem.value}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+    </ng-container>
+    <tr *ngFor="let subItem of parcel.desc;let j=index" [ngStyle]="parcel.style">
+      <td>{{subItem.id}}</td>
+      <td>Item-{{j+1}}</td>
+      <td>{{subItem.itemName}}</td>
+      <td>{{subItem.value}}</td>
+    </tr>
+  </tbody>
+</table>

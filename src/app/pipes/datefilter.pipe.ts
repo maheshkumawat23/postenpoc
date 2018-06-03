@@ -11,8 +11,6 @@ export class DateFilterPipe implements PipeTransform {
      * @{params: to} - to date
      */
     transform(items: any[], from: any, to: any): any[] {
-        console.log(from);
-        console.log(to);
         if (!items) return [];
         if (!from || !to) return items;
         let fromDate = new Date(from);

@@ -9,6 +9,8 @@ const NGCONCEPTS = [
         "attribute Directives - [ngClass],[ngStyle]",
         "Singleton Services",
         "Component Services",
+        "Component Interaction",
+        "Rxjs Observables",
         "CSS - Bootstrap"
 ];
 const FTELIST = [
