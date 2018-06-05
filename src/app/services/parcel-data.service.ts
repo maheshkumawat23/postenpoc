@@ -12,7 +12,14 @@ export class ParcelDataService {
   public currentInput = this.messageSource.asObservable();
   public dateInputs = this.dateSource.asObservable();
   public parcelData = [];
-  constructor(private http: HttpClient) { }
+  public savedFormInputsData = {};
+
+  constructor(private http: HttpClient) {
+      this.savedFormInputsData = {
+        order_id : '',
+        name : ''
+      }
+   }
 
   getOrdersListFromApi(){
     this.http.get<Order[]>(this.parcelUrl).subscribe(res =>{})

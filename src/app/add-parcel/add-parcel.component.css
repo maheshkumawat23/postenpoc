@@ -16,3 +16,14 @@
 .custom-btn {
   margin-left: 15%;
 }
+a{
+  cursor: pointer;
+  background:lightblue;
+}
+a:hover{
+  background:lightgray;
+  color:white;
+}
+.container{
+  margin-top: 2rem;
+}

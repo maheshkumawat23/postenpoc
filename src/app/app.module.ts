@@ -19,8 +19,6 @@ import { DateFilterPipe } from './pipes/datefilter.pipe';
 import { ParcelDataService } from './services/parcel-data.service';
 import { TabsContainerComponent } from './tabs-container/tabs-container.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +31,7 @@ import { TabsContainerComponent } from './tabs-container/tabs-container.componen
     SideFilterComponent,
     ParcelContainerComponent,
     AddParcelComponent,
-    TabsContainerComponent
+    TabsContainerComponent,
   ],
   imports: [
     BrowserModule,

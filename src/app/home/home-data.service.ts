@@ -11,7 +11,8 @@ const NGCONCEPTS = [
         "Component Services",
         "Component Interaction",
         "Rxjs Observables",
-        "CSS - Bootstrap"
+        "CSS - Bootstrap",
+        "Parent-Child Communication",
 ];
 const FTELIST = [
         "Handling - if route is not exist - Page Not found page",

@@ -1,15 +1,8 @@
 <div class="container">
-    <div class="tab-slider--nav">
-      <ul class="tab-slider--tabs">
-        <li class="tab-slider--trigger"  rel="tab1" (click)="secondTab=false;firstTab=true">Tab 1</li>
-        <li class="tab-slider--trigger"  rel="tab2" (click)="firstTab=false;secondTab=true">Tab 2</li>
-      </ul>
-    </div>
     <div class="tab-slider--container">
-      <div *ngIf="firstTab" id="tab1" class="tab-slider--body">
-        <!--<app-parcel-table [title]="firstTabTile" (selectedItem)="onSelectedItem($event)"></app-parcel-table>
-        -->
-        <h2>{{tab1Title}}</h2>
+      <div *ngIf="tabTitle=='Select Items'" id="tab1" class="tab-slider--body">
+        <h2>{{tabTitle}}</h2>
+        <!--------------- Table view of Parcels ---------------------->
           <table class="table">
             <thead>
               <tr>
@@ -33,20 +26,17 @@
             </tbody>
           </table>
       </div>
-      <div *ngIf="secondTab" id="tab2" class="tab-slider--body">
-        <h2>{{tab2Title}}</h2>
+      <div *ngIf="tabTitle=='Add Order Details'" id="tab2" class="tab-slider--body">
+        <h2>{{tabTitle}}</h2>
+      <!-------------------- Reactive Form for adding Details --------------------------->
         <form [formGroup]="orderForm">
             <div class="form-group">
               <label for="order_id">Order Number:</label>
-                <input class="form-control" id="order_id" formControlName="order_id">
+                <input class="form-control" id="order_id" (input)="onFormInputChange()" formControlName="order_id">
             </div>
             <div class="form-group">
               <label for="name">Name</label>
-              <input  class="form-control" formControlName="name">
-            </div>
-            <div class="form-group">
-              <label for="name">date</label>
-              <input  class="form-control" formControlName="date">
+              <input  class="form-control" (input)="onFormInputChange()" formControlName="name">
             </div>
           </form>
           <p>Form value: {{ orderForm.value | json }}</p>

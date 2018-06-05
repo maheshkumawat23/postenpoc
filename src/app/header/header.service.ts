@@ -5,7 +5,7 @@ import { Menu } from '../models/menu';
 const MENUS : Menu[] = [
   { "id": 1, "name":"Home", "link":"/home"},
   { "id": 2, "name":"Track Parcels", "link":"/parcels"},
-  { "id": 3, "name":"Add Parcel", "link":"/addparcel"}
+  { "id": 3, "name": "Add Parcels", "link":"/addparcel"}
 ];
 
 //DropDown Mock Data
