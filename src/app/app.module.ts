@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -11,10 +12,13 @@ import { ParcelsComponent } from './parcels/parcels.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SideFilterComponent } from './side-filter/side-filter.component';
 import { ParcelContainerComponent } from './parcel-container/parcel-container.component';
+import { AddParcelComponent } from './add-parcel/add-parcel.component';
 
 import { FilterPipe} from './pipes/filter.pipe';
 import { DateFilterPipe } from './pipes/datefilter.pipe';
 import { ParcelDataService } from './services/parcel-data.service';
+import { TabsContainerComponent } from './tabs-container/tabs-container.component';
+
 
 
 @NgModule({
@@ -27,11 +31,14 @@ import { ParcelDataService } from './services/parcel-data.service';
     FilterPipe,
     DateFilterPipe,
     SideFilterComponent,
-    ParcelContainerComponent
+    ParcelContainerComponent,
+    AddParcelComponent,
+    TabsContainerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

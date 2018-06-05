@@ -4,6 +4,8 @@
         "date": "2018-06-01",
         "total": "$126.27",
         "name": "Mahesh",
+        "items":["shirt","jacket","laptop"],
+        "selectedItem":"shirt",
         "style": {
             "display": "none"
         },
@@ -25,6 +27,8 @@
         "date": "2018-06-04",
         "total": "$100.00",
         "name": "Ramesh",
+        "items":["One Plus 6","Mobile","laptop"],
+        "selectedItem":"Mobile",
         "style": {
             "display": "none"
         },
@@ -41,6 +45,8 @@
         "date": "2018-06-07",
         "total": "$150.00",
         "name": "Akash",
+        "items":["Desktop","Mobile","laptop"],
+        "selectedItem":"laptop",
         "style": {
             "display": "none"
         },
@@ -67,6 +73,8 @@
         "date": "2018-06-10",
         "total": "$300.00",
         "name": "vikas",
+        "items":["Desktop","Mobile","laptop"],
+        "selectedItem":"Desktop",
         "style": {
             "display": "none"
         },
@@ -94,42 +102,6 @@
             {
                 "id": 5,
                 "itemName": "Jacket",
-                "value": "@50.00"
-            }
-        ]
-    },
-    {
-        "id": "order5",
-        "date": "2018-06-15",
-        "total": "$0.00",
-        "name": "Jeet",
-        "style": {
-            "display": "none"
-        },
-        "desc": []
-    },
-    {
-        "id": "order6",
-        "date": "2018-06-18",
-        "total": "$200.00",
-        "name": "sonam",
-        "style": {
-            "display": "none"
-        },
-        "desc": [
-            {
-                "id": 1,
-                "itemName": "shoes",
-                "value": "@100.00"
-            },
-            {
-                "id": 2,
-                "itemName": "shirt",
-                "value": "@50.00"
-            },
-            {
-                "id": 3,
-                "itemName": "Pant",
                 "value": "@50.00"
             }
         ]

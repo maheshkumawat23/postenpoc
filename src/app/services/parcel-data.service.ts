@@ -9,11 +9,14 @@ export class ParcelDataService {
   private parcelUrl = "../../assets/data/parcel.json";
   private messageSource = new BehaviorSubject('');
   private dateSource = new BehaviorSubject({});
-
   public currentInput = this.messageSource.asObservable();
   public dateInputs = this.dateSource.asObservable();
- 
+  public parcelData = [];
   constructor(private http: HttpClient) { }
+
+  getOrdersListFromApi(){
+    this.http.get<Order[]>(this.parcelUrl).subscribe(res =>{})
+  }
   /**
    * {params :void }
    * returns Orders Observable -> get parcels data from end point API
